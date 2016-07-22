@@ -4,9 +4,13 @@ module NyulibrariesInstitutions
     isolate_namespace NyulibrariesInstitutions
 
     # Include the helper in the client application
-    config.to_prepare do
-      ApplicationController.helper(NyulibrariesInstitutions::InstitutionHelper)
+    initializer "nyulibraries_templates.view_helpers" do
+      ActiveSupport.on_load(:action_view) do
+        include NyulibrariesInstitutions::InstitutionHelper
+      end
+    end
 
+    initializer "nyulibraries_templates.controller_helpers" do
       ActiveSupport.on_load(:action_controller) do
         include NyulibrariesInstitutions::InstitutionHelper
       end
