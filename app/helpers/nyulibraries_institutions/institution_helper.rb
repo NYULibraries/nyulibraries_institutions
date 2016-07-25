@@ -140,5 +140,13 @@ module NyulibrariesInstitutions
       institution_ip_addresses.flatten.uniq
     end
     private :reload_ip_addresses_for
+
+    # Get the institution from a given code
+    def institution_from_code(code)
+      unless code.nil?
+        @institution_from_code ||= institutions[code.upcase.to_sym]
+      end
+    end
+    private :institution_from_code
   end
 end
