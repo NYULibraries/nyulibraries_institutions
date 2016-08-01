@@ -1,4 +1,5 @@
 require 'nyulibraries_institutions/version'
+require 'institutions'
 
 module NyulibrariesInstitutions
   class << self
