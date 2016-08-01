@@ -16,6 +16,6 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,lib}/**/**/*", "README.md"]
 
-  s.add_dependency "rails", "~> 4.1.0"
+  s.add_dependency 'rails', '~> 4.1'
   s.add_dependency "institutions", "~> 0.1.3"
 end
