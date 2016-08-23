@@ -1,7 +1,5 @@
 module NyulibrariesInstitutions
   module InstitutionHelper
-    require 'institutions'
-
     # Override Rails #url_for to add institution
     def url_for(options={})
       if institution_param.present? && options.is_a?(Hash)
@@ -15,11 +13,11 @@ module NyulibrariesInstitutions
 
     # Get the stylesheet base on the current institution.
     def institutional_stylesheet
-      stylesheet_link_tag institution.views["css"]
+      stylesheet_link_tag current_institution.views["css"]
     end
 
     def views
-      institution.views
+      current_institution.views
     end
 
     def institution
@@ -45,7 +43,7 @@ module NyulibrariesInstitutions
       when (institution_from_current_user.present?)
         institution_from_current_user
       else
-        Institutions.defaults.first
+        default_institution
       end
     end
     alias current_primary_institution current_institution
@@ -53,7 +51,7 @@ module NyulibrariesInstitutions
 
     def institution_from_current_user
       @institution_from_current_user ||= begin
-        if current_user && current_user.try(:institution_code).present?
+        if defined?(current_user) && current_user && current_user.respond_to?(:institution_code) && current_user.institution_code.present?
           institutions[current_user.institution_code.to_sym]
         end
       end
@@ -78,7 +76,6 @@ module NyulibrariesInstitutions
         end
       end
     end
-    private :institution_from_ip
 
     # All institutions
     def institutions
