@@ -2,22 +2,7 @@ require 'rails_helper'
 
 describe NyulibrariesInstitutions::InstitutionHelper do
   describe "url_for" do
-    subject{ helper.url_for(params) }
-    let(:params){ {controller: "welcome"} }
-
-    pending
-
-    # context "with institution_param" do
-    #   let(:institution_param){ "NS" }
-    #   before { allow(helper).to receive(:institution_param).and_return institution_param }
-    #
-    #   it { is_expected.to eq "/?institution=NS" }
-    # end
-    #
-    # context "with institute_param" do
-    #   let(:institute_param){ "NYUAD" }
-    #   before { allow(helper).to receive(:institute_param).and_return institute_param }
-    # end
+    # tested in application_controller_spec
   end
 
   describe "institutional_stylesheet" do
