@@ -1,14 +1,14 @@
 module NyulibrariesInstitutions
   module InstitutionHelper
     # Override Rails #url_for to add institution
-    def url_for(options={})
+    def url_for_institution(options={})
       if institution_param.present? && options.is_a?(Hash)
         options[institution_param_name] ||= institution_param
       end
       if institute_param.present? && options.is_a?(Hash)
         options[:institute] ||= institute_param
       end
-      super options
+      url_for(options)
     end
 
     # Get the stylesheet base on the current institution.
