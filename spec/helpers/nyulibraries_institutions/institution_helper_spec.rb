@@ -106,12 +106,12 @@ describe NyulibrariesInstitutions::InstitutionHelper do
 
     context "with request" do
       let(:request){ double ActionDispatch::Request, remote_ip: remote_ip }
-      let(:remote_ip){ "123.123.123.123" }
+      let(:remote_ip){ "123.123.123.122" }
 
-      context "given institution" do
-        let(:institution1){ double(Institutions::Institution, ip_addresses: nil, code: :NYU, includes_ip?: false) }
-        let(:institution2){ double(Institutions::Institution, ip_addresses: nil, code: :NYUAD, includes_ip?: false) }
-        let(:institution3){ double(Institutions::Institution, ip_addresses: nil, code: :NS, includes_ip?: false) }
+      context "given institutions" do
+        let(:institution1){ Institutions::Institution.new(:NYU, "NYU Libraries", ip_addresses: ips1) }
+        let(:institution2){ Institutions::Institution.new(:NYUAD, "NYU Libraries", ip_addresses: ips2) }
+        let(:institution3){ Institutions::Institution.new(:NS, "New School Libraries", ip_addresses: ips3) }
         let(:institutions) do
           {
             NYU: institution1,
@@ -119,17 +119,28 @@ describe NyulibrariesInstitutions::InstitutionHelper do
             NS: institution3,
           }
         end
-        before { allow(Institutions).to receive(:institutions).and_return institutions }
+        let(:ips1){ %w[120.120.120.120 122.122.122.122] }
+        let(:ips2){ %w[121.121.121.121 123.123.123.123] }
+        let(:ips3){ %w[124.124.124.124 125.125.125.125] }
+        let(:yml) do
+          {
+            NYU: {ip_addresses: ips1},
+            NYUAD: {ip_addresses: ips2},
+            NS: {ip_addresses: ips3},
+          }
+        end
+        before do
+          allow(Institutions).to receive(:institutions).and_return institutions
+          allow(YAML).to receive(:load).and_return yml
+        end
 
-        context "matching request" do
-          before do
-            allow(institution2).to receive(:includes_ip?).with(remote_ip).and_return true
-          end
+        context "matching request IP" do
+          let(:remote_ip){ "123.123.123.123" }
 
           it { is_expected.to eq institution2 }
         end
 
-        context "not matching request" do
+        context "not matching request IP" do
           it { is_expected.to eq nil }
         end
       end
