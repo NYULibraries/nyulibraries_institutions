@@ -34,8 +34,8 @@ describe NyulibrariesInstitutions::InstitutionHelper do
     end
   end
 
-  describe "views" do
-    subject{ helper.views }
+  describe "institution_views" do
+    subject{ helper.institution_views }
     let(:institution){ double Institutions::Institution, views: views }
     let(:views){ ({a: "b", c: "d"}).with_indifferent_access }
     before do

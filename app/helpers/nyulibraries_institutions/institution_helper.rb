@@ -16,7 +16,7 @@ module NyulibrariesInstitutions
       stylesheet_link_tag current_institution.views["css"]
     end
 
-    def views
+    def institution_views
       current_institution.views
     end
 
