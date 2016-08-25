@@ -15,4 +15,4 @@ Automatically loads institution-related helpers to `ActionController` and `Actio
 
 ### Finding institution from current user
 
-`NyulibrariesStylesheets` refers to a `current_user` method as one of several options to determine `current_institution`. It expects `current_user` to return an object responding to `institution_code`. If either `current_user` or `current_user.institution_code` is not defined in the client application, `current_institution` will default to NYU.
+The client application may define a `current_user` helper method (available in controllers and views). If this method returns a user object responding to `institution_code`, then `NyulibrariesInstitutions` uses this as one of several methods of determining `current_institution`. If it doesn't define this method, or the user object it returns doesn't implement `institution_code`, this option is silently ignored.
