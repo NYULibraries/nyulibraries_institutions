@@ -68,8 +68,6 @@ module NyulibrariesInstitutions
       end
     end
 
-    private
-
     # All institutions
     def institutions
       # Reset ip_addresses with the protected setter
@@ -81,6 +79,8 @@ module NyulibrariesInstitutions
         end
       end
     end
+
+    private
 
     # The institution param as a Symbol
     def institution_param
