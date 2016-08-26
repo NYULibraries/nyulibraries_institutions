@@ -5,9 +5,13 @@ module NyulibrariesInstitutions
   class << self
     # modified from bootstrap-sass gem
     def load!
-      register_rails_engine
+      register_rails_engine if rails?
       # add common configuration to front of loadpath
       Institutions.loadpaths.unshift(configuration_filepath)
+    end
+
+    def rails?
+      defined?(::Rails)
     end
 
     private
