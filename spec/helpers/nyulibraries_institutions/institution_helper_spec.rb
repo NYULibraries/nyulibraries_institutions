@@ -164,14 +164,24 @@ describe NyulibrariesInstitutions::InstitutionHelper do
     subject{ helper.institution_from_current_user }
 
     context "with current_user defined" do
-      before do
-        class DummyUser
+      let(:fake_user_class) do
+        Class.new do
+          # needed to define current_user (below)
           def self.first; end
         end
+      end
+      before do
+        stub_const("DummyUser", fake_user_class)
+        # define current_user to return user
         helper.define_singleton_method(:current_user) do
           DummyUser.first
         end
         allow(DummyUser).to receive(:first).and_return user
+      end
+      after do
+        # undefine current_user and ensure not present for other tests
+        helper.instance_eval { undef :current_user }
+        expect(helper).to_not respond_to(:current_user)
       end
 
       context "and returns nil" do
@@ -187,12 +197,13 @@ describe NyulibrariesInstitutions::InstitutionHelper do
       end
 
       context "and returns object with institution_code" do
-        let(:user){ double DummyUser, institution_code: institution_code }
-        before do
-          class DummyUser
+        let(:fake_user_class) do
+          Class.new do
+            def self.first; end
             def institution_code; end
           end
         end
+        let(:user){ double DummyUser, institution_code: institution_code }
 
         context "set to nil" do
           let(:institution_code){ nil }
