@@ -20,10 +20,6 @@ module NyulibrariesInstitutions
       current_institution.views
     end
 
-    def institution
-      current_primary_institution
-    end
-
     def default_institution
       @default_institution ||= Institutions.defaults.first
     end
@@ -39,6 +35,7 @@ module NyulibrariesInstitutions
     end
     alias current_primary_institution current_institution
     alias current_institute current_institution
+    alias institution current_institution
 
     def institution_from_current_user
       @institution_from_current_user ||= begin

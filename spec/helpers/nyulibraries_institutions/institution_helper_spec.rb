@@ -94,6 +94,24 @@ describe NyulibrariesInstitutions::InstitutionHelper do
     end # end context "without institution_param"
   end # end describe "current_institution"
 
+  describe "current_primary_institution" do
+    it "should be an alias of current_institution" do
+      expect(helper.method(:current_primary_institution)).to eq helper.method(:current_institution)
+    end
+  end
+
+  describe "current_institute" do
+    it "should be an alias of current_institution" do
+      expect(helper.method(:current_institute)).to eq helper.method(:current_institution)
+    end
+  end
+
+  describe "institution" do
+    it "should be an alias of current_institution" do
+      expect(helper.method(:institution)).to eq helper.method(:current_institution)
+    end
+  end
+
   describe "institution_from_ip" do
     subject{ helper.institution_from_ip }
     before { allow(helper).to receive(:request).and_return request }
