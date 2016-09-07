@@ -16,3 +16,7 @@ Automatically loads institution-related helpers to `ActionController` and `Actio
 ### Finding institution from current user
 
 The client application may define a `current_user` helper method (available in controllers and views). If this method returns a user object responding to `institution_code`, then `NyulibrariesInstitutions` uses this as one of several methods of determining `current_institution`. If it doesn't define this method, or the user object it returns doesn't implement `institution_code`, this option is silently ignored.
+
+## Upgrading from Nyulibraries::Assets
+
+The method `views` has been renamed `institution_views.`
