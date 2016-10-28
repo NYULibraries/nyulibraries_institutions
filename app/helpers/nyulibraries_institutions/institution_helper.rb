@@ -1,29 +1,23 @@
 module NyulibrariesInstitutions
   module InstitutionHelper
-    require 'institutions'
-
     # Override Rails #url_for to add institution
-    def url_for(options={})
+    def url_for_institution(options={})
       if institution_param.present? && options.is_a?(Hash)
         options[institution_param_name] ||= institution_param
       end
       if institute_param.present? && options.is_a?(Hash)
         options[:institute] ||= institute_param
       end
-      super options
+      url_for(options)
     end
 
     # Get the stylesheet base on the current institution.
     def institutional_stylesheet
-      stylesheet_link_tag institution.views["css"]
+      stylesheet_link_tag current_institution.views["css"]
     end
 
-    def views
-      institution.views
-    end
-
-    def institution
-      current_primary_institution
+    def institution_views
+      current_institution.views
     end
 
     def default_institution
@@ -37,23 +31,15 @@ module NyulibrariesInstitutions
     #   3. primary institution for the current user
     #   4. first default institution
     def current_institution
-      @current_institution ||= case
-      when (institution_param.present? && institutions[institution_param])
-        institutions[institution_param]
-      when institution_from_ip.present?
-        institution_from_ip
-      when (institution_from_current_user.present?)
-        institution_from_current_user
-      else
-        Institutions.defaults.first
-      end
+      @current_institution ||= get_current_institution
     end
     alias current_primary_institution current_institution
     alias current_institute current_institution
+    alias institution current_institution
 
     def institution_from_current_user
       @institution_from_current_user ||= begin
-        if current_user && current_user.try(:institution_code).present?
+        if defined?(current_user) && current_user && current_user.respond_to?(:institution_code) && current_user.institution_code.present?
           institutions[current_user.institution_code.to_sym]
         end
       end
@@ -69,7 +55,7 @@ module NyulibrariesInstitutions
     def institution_from_ip
       unless request.nil?
         @institution_from_ip ||= begin
-          institutions_from_ip = institutions.find_all { |code, institution| institution.includes_ip? request.remote_ip }
+          institutions_from_ip = institutions.find_all { |_code, institution| institution.includes_ip? request.remote_ip }
           if institutions_from_ip.present?
             # Get first matching institution and get the last element from
             # [:NYU, Institution] array, that is, the actual Institution object
@@ -78,33 +64,31 @@ module NyulibrariesInstitutions
         end
       end
     end
-    private :institution_from_ip
 
     # All institutions
     def institutions
       # Reset ip_addresses with the protected setter
       # to separate IP ranges as a string into IPRange objects
       # See institutions gem: https://github.com/scotdalton/institutions/blob/745b26efb082bec055818baf61a112f4f99db657/lib/institutions/institution/ip_addresses.rb#L6-L12
-      @institutions ||= Institutions.institutions.each do |code, institution|
+      @institutions ||= Institutions.institutions.each do |_code, institution|
         unless institution.ip_addresses.nil? || institution.ip_addresses.is_a?(IPAddrRangeSet)
           institution.send("ip_addresses=", ip_addresses_for(institution))
         end
       end
     end
-    private :institutions
+
+    private
 
     # The institution param as a Symbol
     def institution_param
       params[institution_param_name].upcase.to_sym if params[institution_param_name].present?
     end
-    private :institution_param
 
     # The institute param as a Symbol
     # failover to institute if it exists for backwards compatibility
     def institute_param
       params['institute'].upcase.to_sym if params['institute'].present?
     end
-    private :institute_param
 
     # Get the IP addresses for an individual institution after it's already been loaded
     # I don't like this but we need it to get around the fact that Institutions
@@ -119,7 +103,6 @@ module NyulibrariesInstitutions
         ip_addresses_for_institution
       end
     end
-    private :ip_addresses_for
 
     # Take a page from the institutions gem and reload just the ip_addresses
     # as an array for the given institution
@@ -139,7 +122,6 @@ module NyulibrariesInstitutions
       end
       institution_ip_addresses.flatten.uniq
     end
-    private :reload_ip_addresses_for
 
     # Get the institution from a given code
     def institution_from_code(code)
@@ -147,6 +129,18 @@ module NyulibrariesInstitutions
         @institution_from_code ||= institutions[code.upcase.to_sym]
       end
     end
-    private :institution_from_code
+
+    def get_current_institution
+      case
+      when (institution_param.present? && institutions[institution_param])
+        institutions[institution_param]
+      when institution_from_ip.present?
+        institution_from_ip
+      when (institution_from_current_user.present?)
+        institution_from_current_user
+      else
+        default_institution
+      end
+    end
   end
 end

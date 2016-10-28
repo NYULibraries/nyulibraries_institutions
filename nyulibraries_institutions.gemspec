@@ -16,6 +16,13 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,lib}/**/**/*", "README.md"]
 
-  s.add_dependency 'rails', '~> 4.1'
+  s.add_dependency 'rails', '>= 4'
   s.add_dependency "institutions", "~> 0.1.3"
+
+  s.add_development_dependency 'pry'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'coveralls'
+  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'climate_control'
 end

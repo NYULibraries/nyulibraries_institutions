@@ -19,7 +19,7 @@ module NyulibrariesInstitutions
     config.generators do |g|
       g.test_framework :rspec, :fixture => false
       g.assets false
-      g.helper false
+      g.helper true
     end
   end
 end
