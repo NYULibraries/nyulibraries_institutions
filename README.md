@@ -1,9 +1,9 @@
 # NyulibrariesInstitutions
 
 [![NYU](https://github.com/NYULibraries/nyulibraries_stylesheets/blob/master/app/assets/images/nyulibraries_stylesheets/nyu.png)](https://dev.library.nyu.edu)
-[![Build Status](https://travis-ci.org/NYULibraries/nyulibraries_institutions.svg)](https://travis-ci.org/NYULibraries/nnyulibraries_institutions)
+[![Build Status](https://travis-ci.org/NYULibraries/nyulibraries_institutions.svg)](https://travis-ci.org/NYULibraries/nyulibraries_institutions)
 [![Code Climate](https://codeclimate.com/github/NYULibraries/nyulibraries_institutions/badges/gpa.svg)](https://codeclimate.com/github/NYULibraries/nyulibraries_institutions)
-[![Coverage Status](https://coveralls.io/repos/github/NYULibraries/nnyulibraries_institutions/badge.svg?branch=master)](https://coveralls.io/github/NYULibraries/nnyulibraries_institutions?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/NYULibraries/nyulibraries_institutions/badge.svg?branch=master)](https://coveralls.io/github/NYULibraries/nyulibraries_institutions?branch=master)
 
 ## Installation
 
