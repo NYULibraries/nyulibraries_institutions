@@ -210,7 +210,7 @@ NS:
       general_public: true
 
 HSL:
-  name: NYU Health Sciences Libraries
+  name: NYU Health Sciences Library
   getit_url: https://getit.library.nyu.edu/hsl/resolve?
   auth:
     code: HSL
@@ -218,7 +218,7 @@ HSL:
     css: application_hsl
     dir: hsl
     breadcrumbs:
-      title: NYU Health Sciences Libraries
+      title: NYU Health Sciences Library
       url: http://hsl.med.nyu.edu/
     tabs:
       all:
