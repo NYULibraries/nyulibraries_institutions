@@ -5,9 +5,6 @@ module NyulibrariesInstitutions
       if institution_param.present? && options.is_a?(Hash)
         options[institution_param_name] ||= institution_param
       end
-      if institute_param.present? && options.is_a?(Hash)
-        options[:institute] ||= institute_param
-      end
       url_for(options)
     end
 
@@ -34,7 +31,6 @@ module NyulibrariesInstitutions
       @current_institution ||= get_current_institution
     end
     alias current_primary_institution current_institution
-    alias current_institute current_institution
     alias institution current_institution
 
     def institution_from_current_user
@@ -82,12 +78,6 @@ module NyulibrariesInstitutions
     # The institution param as a Symbol
     def institution_param
       params[institution_param_name].upcase.to_sym if params[institution_param_name].present?
-    end
-
-    # The institute param as a Symbol
-    # failover to institute if it exists for backwards compatibility
-    def institute_param
-      params['institute'].upcase.to_sym if params['institute'].present?
     end
 
     # Get the IP addresses for an individual institution after it's already been loaded

@@ -11,13 +11,6 @@ describe NyulibrariesInstitutions::InstitutionHelper do
 
       it { is_expected.to eq "/?institution=NS" }
     end
-
-    context "with institute_param" do
-      let(:institute_param){ "NYUAD" }
-      before { allow(helper).to receive(:institute_param).and_return institute_param }
-
-      it { is_expected.to eq "/?institute=NYUAD" }
-    end
   end
 
   describe "institutional_stylesheet" do
@@ -97,12 +90,6 @@ describe NyulibrariesInstitutions::InstitutionHelper do
   describe "current_primary_institution" do
     it "should be an alias of current_institution" do
       expect(helper.method(:current_primary_institution)).to eq helper.method(:current_institution)
-    end
-  end
-
-  describe "current_institute" do
-    it "should be an alias of current_institution" do
-      expect(helper.method(:current_institute)).to eq helper.method(:current_institution)
     end
   end
 
