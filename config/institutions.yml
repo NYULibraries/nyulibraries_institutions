@@ -6,6 +6,8 @@ NYU:
     code: NYU
   getit_url: https://getit.library.nyu.edu/nyu/resolve?
   bobcat_url: http://bobcat.library.nyu.edu
+  eshelf_url: https://eshelf.library.nyu.edu
+  my_account_url: https://eshelf.library.nyu.edu/account
   bobcat_alias: nyu
   views:
     css: application
@@ -46,6 +48,7 @@ NYUSH:
   name: NYU Shanghai Library
   getit_url: https://getit.library.nyu.edu/nyush/resolve?
   link_to_parent: NYU
+  bobcat_alias: nyush
   views:
     css: application_nyush
     dir: nyush
@@ -84,6 +87,7 @@ NYUSH:
 NYUAD:
   name: NYU Abu Dhabi Library
   getit_url: https://getit.library.nyu.edu/nyuad/resolve?
+  bobcat_alias: nyuad
   views:
     css: application_nyuad
     dir: nyuad
