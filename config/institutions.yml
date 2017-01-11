@@ -23,12 +23,8 @@ NYU:
         tip: 'Books & e-books, journals & e-journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings'
       remote:
         display: 'Articles & Databases'
-        url: https://arch.library.nyu.edu
+        url: http://guides.nyu.edu/newarch
         tip: by Subject and Content Type
-      databases:
-        display: Databases A-Z
-        url: https://arch.library.nyu.edu/databases/alphabetical/
-        tip: All databases by title
       journals:
         display: Journals
         tip: Find e-journals by title or locate a known article
