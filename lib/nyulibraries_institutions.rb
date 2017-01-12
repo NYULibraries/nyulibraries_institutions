@@ -8,9 +8,9 @@ module NyulibrariesInstitutions
       register_rails_engine if rails?
       # add common configuration to front of loadpath
       Institutions.loadpaths.unshift(configuration_filepath)
-      if rails?
-        Institutions.filenames << 'institutions.qa.yml' if Rails.env.qa?
-        Institutions.filenames << 'institutions.dev.yml' if Rails.env.development?
+      if rails? && !Rails.env.production?
+        Institutions.filenames << 'institutions.qa.yml'
+        Institutions.filenames << 'institutions.dev.yml'
       end
     end
 
