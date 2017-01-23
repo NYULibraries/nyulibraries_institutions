@@ -25,7 +25,7 @@ NYU:
         tip: 'Books & e-books, journals & e-journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings'
       remote:
         display: 'Articles & Databases'
-        url: http://guides.nyu.edu/newarch
+        url: http://guides.nyu.edu/arch
         tip: by Subject and Content Type
       journals:
         display: Journals
