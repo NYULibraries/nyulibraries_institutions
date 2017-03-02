@@ -170,17 +170,17 @@ NS:
       url: http://ill.library.nyu.edu
     tabs:
       all:
-        display: Consortium Libraries
+        display: 'Books & More'
         url: http://bobcat.library.nyu.edu/newschool
         tip: Find resources in All Consortium Libraries
-      databases:
-        display: Databases A-Z
-        url: https://arch.library.nyu.edu/ns/databases/alphabetical/
-        tip: All databases by title
       remote:
         display: Articles and Databases
         url: https://arch.library.nyu.edu/ns
         tip: 'Search for articles, images and media by subject'
+      databases:
+        display: Databases A-Z
+        url: https://arch.library.nyu.edu/ns/databases/alphabetical/
+        tip: All databases by title
       journals:
         display: Journals A-Z
         tip: Locate journals by title or citation
