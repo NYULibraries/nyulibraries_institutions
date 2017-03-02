@@ -28,9 +28,7 @@ NYUSH:
       all:
         url: http://bobcatdev.library.nyu.edu/nyush
       remote:
-        url: https://dev.arch.library.nyu.edu/nyush
-      databases:
-        url: https://dev.arch.library.nyu.edu/nyush/databases/alphabetical/
+        url: http://guides.nyu.edu/arch
       reserves:
         url: 'http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=NYUSH&tab=nyushcr'
 
@@ -46,9 +44,7 @@ NYUAD:
       all:
         url: http://bobcatdev.library.nyu.edu/nyuad
       remote:
-        url: https://qa.arch.library.nyu.edu/nyuad
-      databases:
-        url: https://qa.arch.library.nyu.edu/nyuad/databases/alphabetical/
+        url: http://guides.nyu.edu/adarch
       reserves:
         url: 'http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=NYUAD&tab=nyuadcr'
 
@@ -78,24 +74,16 @@ NS:
     tabs:
       all:
         url: http://bobcatdev.library.nyu.edu/newschool
-      ns:
-        url: "http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=NS&tab=ns"
       remote:
         url: https://qa.arch.library.nyu.edu/ns
       databases:
         url: https://qa.arch.library.nyu.edu/ns/databases/alphabetical/
-      reserves:
-        url: 'http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=NS&tab=nscr'
 
 HSL:
   getit_url: https://qa.getit.library.nyu.edu/hsl/resolve?
   bobcat_url: http://bobcatdev.library.nyu.edu
   eshelf_url: https://qa.eshelf.library.nyu.edu
   my_account_url: https://qa.eshelf.library.nyu.edu/account
-  views:
-    tabs:
-      all:
-        url: "http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=HSL&tab=all"
 
 NYSID:
   bobcat_url: http://bobcatdev.library.nyu.edu
