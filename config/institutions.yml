@@ -209,6 +209,9 @@ HSL:
       primary: nyu_shibboleth
       secondary:
         - bobst
+  services:
+    Dummy:
+      disabled: true
 
 NYSID:
   name: New York School of Interior Design
