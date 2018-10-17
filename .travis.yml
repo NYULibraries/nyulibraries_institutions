@@ -1,9 +1,17 @@
 language: ruby
+sudo: false
 rvm:
-  - 2.2.9
-  - 2.3.6
-  - 2.4.3
-  - 2.5.0
+  - 2.3.7
+  - 2.4.4
+  - 2.5.1
+env:
+  - RAILS_VERSION=4
+  - RAILS_VERSION=5.1
+  - RAILS_VERSION=5.2
+  - RAILS_VERSION=master
+script:
+  - bundle exec rake
 matrix:
-  allow_failures:
-  - rvm: 2.5.0
+  exclude:
+    - rvm: 2.3.7
+      env: RAILS_VERSION=master
