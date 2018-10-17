@@ -9,7 +9,7 @@ NYU:
       title: NYU Libraries
       url: http://dev.library.nyu.edu
     ill:
-      url: http://dev.ill.library.nyu.edu
+      url: https://dev.ill.library.nyu.edu
     tabs:
       all:
         url: http://bobcatdev.library.nyu.edu
@@ -23,7 +23,7 @@ NYUSH:
   my_account_url: https://qa.eshelf.library.nyu.edu/account
   views:
     ill:
-      url: http://dev.ill.library.nyu.edu
+      url: https://dev.ill.library.nyu.edu
     tabs:
       all:
         url: http://bobcatdev.library.nyu.edu/nyush
@@ -39,7 +39,7 @@ NYUAD:
   my_account_url: https://qa.eshelf.library.nyu.edu/account
   views:
     ill:
-      url: http://dev.ill.library.nyu.edu
+      url: https://dev.ill.library.nyu.edu
     tabs:
       all:
         url: http://bobcatdev.library.nyu.edu/nyuad
@@ -70,7 +70,7 @@ NS:
   my_account_url: https://qa.eshelf.library.nyu.edu/account
   views:
     ill:
-      url: http://dev.ill.library.nyu.edu
+      url: https://dev.ill.library.nyu.edu
     tabs:
       all:
         url: http://bobcatdev.library.nyu.edu/newschool
@@ -91,7 +91,7 @@ NYSID:
   my_account_url: https://qa.eshelf.library.nyu.edu/account
   views:
     ill:
-      url: http://dev.ill.library.nyu.edu
+      url: https://dev.ill.library.nyu.edu
     tabs:
       nysid:
         url: http://bobcatdev.library.nyu.edu/nysid
