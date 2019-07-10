@@ -15,3 +15,5 @@ matrix:
   exclude:
     - rvm: 2.3.7
       env: RAILS_VERSION=master
+before_install:
+  - gem install -v 1.17.2 bundler --no-rdoc --no-ri
