@@ -27,9 +27,6 @@ NYU:
         display: 'Articles & Databases'
         url: http://guides.nyu.edu/arch
         tip: Search databases for articles or browse databases by subject
-      journals:
-        display: Journals
-        tip: Search for journals by title or for articles by citation
       reserves:
         display: Course Reserves
         url: 'https://ares.library.nyu.edu'
@@ -67,9 +64,6 @@ NYUSH:
         display: 'Articles & Databases'
         url: http://guides.nyu.edu/arch
         tip: Search databases for articles or browse databases by subject
-      journals:
-        display: Journals
-        tip: Search for journals by title or for articles by citation
       reserves:
         display: Course Reserves
         url: 'https://ares.library.nyu.edu'
@@ -102,9 +96,6 @@ NYUAD:
         display: 'Articles & Databases'
         url: http://guides.nyu.edu/adarch
         tip: Search databases for articles or browse databases by subject
-      journals:
-        display: Journals
-        tip: Search for journals by title or for articles by citation
       reserves:
         display: Course Reserves
         url: 'http://bobcat.library.nyu.edu/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD'
