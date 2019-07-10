@@ -16,4 +16,5 @@ matrix:
     - rvm: 2.3.7
       env: RAILS_VERSION=master
 before_install:
-  - gem install -v 1.17.2 bundler --no-rdoc --no-ri
+  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v '< 2'
