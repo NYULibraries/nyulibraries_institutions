@@ -16,4 +16,5 @@ group :development, :test do
       "~> #{rails_version}"
     end
   gem "rails", rails
+  gem 'sqlite3', '~> 1.3.6'
 end

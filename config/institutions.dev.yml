@@ -14,7 +14,7 @@ NYU:
       all:
         url: http://bobcatdev.library.nyu.edu
       reserves:
-        url: 'http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=NYU&tab=reserves'
+        url: 'https://ares.library.nyu.edu'
 
 NYUSH:
   getit_url: https://dev.getit.library.nyu.edu/nyush/resolve?
@@ -26,11 +26,11 @@ NYUSH:
       url: https://dev.ill.library.nyu.edu
     tabs:
       all:
-        url: http://bobcatdev.library.nyu.edu/nyush
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/search?vid=NYUSH'
       remote:
         url: http://guides.nyu.edu/arch
       reserves:
-        url: 'http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=NYUSH&tab=nyushcr'
+        url: 'https://ares.library.nyu.edu'
 
 NYUAD:
   getit_url: https://dev.getit.library.nyu.edu/nyuad/resolve?
@@ -42,11 +42,11 @@ NYUAD:
       url: https://dev.ill.library.nyu.edu
     tabs:
       all:
-        url: http://bobcatdev.library.nyu.edu/nyuad
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/search?vid=NYUAD'
       remote:
         url: https://guides.nyu.edu/adarch
       reserves:
-        url: 'http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=NYUAD&tab=nyuadcr'
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD'
 
 CU:
   getit_url: https://dev.getit.library.nyu.edu/cu/resolve?
@@ -56,11 +56,11 @@ CU:
   views:
     tabs:
       all:
-        url: http://bobcatdev.library.nyu.edu/cooper
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/search?vid=CU'
       cu:
-        url: "http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=CU&tab=cu"
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/search?vid=CU&tab=cu'
       reserves:
-        url: 'http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=CU&tab=cucr'
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/search?tab=cucr&vid=CU'
 
 
 NS:
@@ -73,11 +73,15 @@ NS:
       url: https://dev.ill.library.nyu.edu
     tabs:
       all:
-        url: http://bobcatdev.library.nyu.edu/newschool
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/search?vid=NS2-NUI'
       remote:
-        url: https://dev.arch.library.nyu.edu/ns
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/jsearch?vid=NS2-NUI'
       databases:
-        url: https://dev.arch.library.nyu.edu/ns/databases/alphabetical/
+        url: http://guides.library.newschool.edu/az.php
+      journals:
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/npsearch?vid=NS2-NUI'
+      browse:
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/browse?vid=NS2-NUI'
 
 HSL:
   getit_url: https://dev.getit.library.nyu.edu/hsl/resolve?
@@ -94,8 +98,8 @@ NYSID:
       url: https://dev.ill.library.nyu.edu
     tabs:
       nysid:
-        url: http://bobcatdev.library.nyu.edu/nysid
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/search?tab=nysid&vid=NYSID'
       all:
-        url: http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=NYSID&tab=all
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/search?vid=NYSID&tab=all'
       reserves:
-        url: 'http://bobcatdev.library.nyu.edu/primo_library/libweb/action/search.do?mode=Basic&vid=NYSID&tab=reserves'
+        url: 'http://bobcatdev.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=reserves&vid=NYSID'

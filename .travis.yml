@@ -1,9 +1,9 @@
 language: ruby
 sudo: false
 rvm:
-  - 2.3.7
-  - 2.4.4
-  - 2.5.1
+  - 2.4.6
+  - 2.5.5
+  - 2.6.3
 env:
   - RAILS_VERSION=4
   - RAILS_VERSION=5.1
@@ -12,6 +12,8 @@ env:
 script:
   - bundle exec rake
 matrix:
-  exclude:
-    - rvm: 2.3.7
-      env: RAILS_VERSION=master
+  allow_failures:
+    - env: RAILS_VERSION=master
+before_install:
+  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v '< 2'
