@@ -18,7 +18,7 @@ NYU:
 
 NYUSH:
   getit_url: https://dev.getit.library.nyu.edu/nyush/resolve?
-  bobcat_url: http://bobcatdev.library.nyu.edu
+  bobcat_url: http://bobcatdev.library.nyu.edu/nyush
   eshelf_url: https://dev.eshelf.library.nyu.edu
   my_account_url: https://dev.eshelf.library.nyu.edu/account
   views:
@@ -34,7 +34,7 @@ NYUSH:
 
 NYUAD:
   getit_url: https://dev.getit.library.nyu.edu/nyuad/resolve?
-  bobcat_url: http://bobcatdev.library.nyu.edu
+  bobcat_url: http://bobcatdev.library.nyu.edu/nyuad
   eshelf_url: https://dev.eshelf.library.nyu.edu
   my_account_url: https://dev.eshelf.library.nyu.edu/account
   views:
