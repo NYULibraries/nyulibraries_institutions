@@ -43,6 +43,7 @@ NYU:
 
 NYUSH:
   name: NYU Shanghai Library
+  bobcat_url: http://bobcat.library.nyu.edu/nyush
   getit_url: https://getit.library.nyu.edu/nyush/resolve?
   link_to_parent: NYU
   bobcat_alias: nyush
@@ -76,6 +77,7 @@ NYUSH:
 
 NYUAD:
   name: NYU Abu Dhabi Library
+  bobcat_url: http://bobcat.library.nyu.edu/nyuad
   getit_url: https://getit.library.nyu.edu/nyuad/resolve?
   bobcat_alias: nyuad
   views:
